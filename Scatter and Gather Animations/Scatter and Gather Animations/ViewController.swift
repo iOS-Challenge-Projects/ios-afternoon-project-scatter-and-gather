@@ -145,6 +145,16 @@ class ViewController: UIViewController {
     
     //MARK: - Animation
     
+    func generateRandomColor() -> CGColor {
+    let redValue = CGFloat(drand48())
+    let greenValue = CGFloat(drand48())
+    let blueValue = CGFloat(drand48())
+          
+        let randomColor = CGColor(srgbRed: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
+       
+    return randomColor
+    }
+    
     
     //Func to toggle Bool
     @objc func navButtonPressed() {
@@ -176,6 +186,19 @@ class ViewController: UIViewController {
                 self.forthLabel.transform = CGAffineTransform(rotationAngle: CGFloat.random(in: 1...360))
                 self.fifthLabel.transform = CGAffineTransform(rotationAngle: CGFloat.random(in: 1...360))
                 self.sixthLabel.transform = CGAffineTransform(rotationAngle: CGFloat.random(in: 1...360))
+                
+            }
+            
+            //background color
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0){
+        
+                
+                self.firstLabel.layer.backgroundColor = self.generateRandomColor()
+                self.secondLabel.layer.backgroundColor = self.generateRandomColor()
+                self.thirdLabel.layer.backgroundColor = self.generateRandomColor()
+                self.forthLabel.layer.backgroundColor = self.generateRandomColor()
+                self.fifthLabel.layer.backgroundColor = self.generateRandomColor()
+                self.sixthLabel.layer.backgroundColor = self.generateRandomColor()
                 
             }
             
@@ -221,6 +244,19 @@ class ViewController: UIViewController {
                 self.forthLabel.transform = .identity
                 self.fifthLabel.transform = .identity
                 self.sixthLabel.transform = .identity
+                
+            }
+            
+            //background color
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 1.0){
+                
+                
+                self.firstLabel.layer.backgroundColor = UIColor.white.cgColor
+                self.secondLabel.layer.backgroundColor = UIColor.white.cgColor
+                self.thirdLabel.layer.backgroundColor = UIColor.white.cgColor
+                self.forthLabel.layer.backgroundColor = UIColor.white.cgColor
+                self.fifthLabel.layer.backgroundColor = UIColor.white.cgColor
+                self.sixthLabel.layer.backgroundColor = UIColor.white.cgColor
                 
             }
             
