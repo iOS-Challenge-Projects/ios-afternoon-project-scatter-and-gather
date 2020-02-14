@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
  
+    var imageView: UIImageView!
     
     var isScattered = false
     
@@ -20,6 +21,14 @@ class ViewController: UIViewController {
         
         setupButton()
         setupLabels()
+        setupImage()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        imageView.center = self.view.center
     }
     
     
@@ -47,36 +56,42 @@ class ViewController: UIViewController {
         firstLabel.translatesAutoresizingMaskIntoConstraints = false
         firstLabel.text = "L"
         firstLabel.textAlignment = .center
+        firstLabel.font = UIFont.systemFont(ofSize: 60)
 
         //2 label
         let secondLabel = UILabel()
         secondLabel.translatesAutoresizingMaskIntoConstraints = false
         secondLabel.text = "A"
         secondLabel.textAlignment = .center
+        secondLabel.font = UIFont.systemFont(ofSize: 60)
         
         //3 label
         let thirdLabel = UILabel()
         thirdLabel.translatesAutoresizingMaskIntoConstraints = false
         thirdLabel.text = "M"
         thirdLabel.textAlignment = .center
+        thirdLabel.font = UIFont.systemFont(ofSize: 60)
         
         //4 label
         let forthLabel = UILabel()
         forthLabel.translatesAutoresizingMaskIntoConstraints = false
         forthLabel.text = "B"
         forthLabel.textAlignment = .center
+        forthLabel.font = UIFont.systemFont(ofSize: 60)
         
         //5 label
         let fifthLabel = UILabel()
         fifthLabel.translatesAutoresizingMaskIntoConstraints = false
         fifthLabel.text = "D"
         fifthLabel.textAlignment = .center
+        fifthLabel.font = UIFont.systemFont(ofSize: 60)
         
         //6 label
         let sixthLabel = UILabel()
         sixthLabel.translatesAutoresizingMaskIntoConstraints = false
         sixthLabel.text = "A"
         sixthLabel.textAlignment = .center
+        sixthLabel.font = UIFont.systemFont(ofSize: 60)
 
         
         //Create a stack view
@@ -97,16 +112,27 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(sixthLabel)
         
         //constraint stackView
-        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 100).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 60).isActive = true
         
-        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -100).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60).isActive = true
         stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
         
         
     }
     
     func setupImage() {
-        let imageView = UIImageView()
+        
+        //Initiate image
+        imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "lambda_logo")
+        
+        //Constraints
+        imageView.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        //add to the view
+        view.addSubview(imageView)
         
     }
 
