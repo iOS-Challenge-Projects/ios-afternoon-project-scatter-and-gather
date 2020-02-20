@@ -205,6 +205,7 @@ class ViewController: UIViewController {
             //Move letters to another location
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5){
                 
+                //This is use to save the position to revert changes later
                 self.positionL = self.firstLabel.center
                 self.positionA = self.secondLabel.center
                 self.positionM = self.thirdLabel.center
